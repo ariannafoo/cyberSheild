@@ -14,11 +14,14 @@ struct HomeView: View {
     @State private var errorMessage : String = ""
     @State private var showAlert : Bool = false
     @State private var isBreached : Bool = false
-    @State private var funFact = [String]()
+    @State private var funFactList = [String]()
+    @State private var funFact : String = ""
+
     
     var body: some View {
 
         VStack{
+            
             Form{
                 Text("Check Password")
                     .font(.largeTitle)
@@ -36,7 +39,7 @@ struct HomeView: View {
                 Button(action: {
                     // Calling helper to check if field is empty
                     self.areInputsEmpty()
-                    
+
                 }) {
                     Text("Check breach")
                         .frame(maxWidth: .infinity)
@@ -56,17 +59,23 @@ struct HomeView: View {
                     )
                 } // alert
                 
-                Spacer()
+                //Spacer()
             } // Form
             
             // Creating another form to display facts
-            
             Form{
-                Text("\(String(describing: self.getRandomFunFact()))")
-            }
-            .onAppear(perform: self.readFile)
-            
-            
+                
+                HStack{
+                    Image(systemName: "pencil.and.scribble")
+                        .foregroundColor(.blue)
+                    
+                    Text("Fun Fact: \(self.funFact)")
+                    
+                } // HStack
+            } // Form
+            .font(.caption)
+            .bold()
+            .onAppear(perform: self.getRandomFunFact)
             
         } // VStack
         
@@ -104,7 +113,7 @@ struct HomeView: View {
             
             // Now you can iterate over the lines and process them
             for line in lines {
-                self.funFact.append(line)
+                self.funFactList.append(line)
             }
         } catch {
             // Handle any errors that may occur while reading the file
@@ -116,9 +125,11 @@ struct HomeView: View {
     
     private func getRandomFunFact(){
         
-        let listLen = self.funFact.count
+        self.readFile()
         
-        return self.funFact[Int.random(in: 0..<listLen)]
+        let listLen = self.funFactList.count
+        
+        self.funFact = self.funFactList[Int.random(in: 0..<listLen)]
     }
     
     
