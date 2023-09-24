@@ -16,6 +16,8 @@ struct HomeView: View {
     @State private var isBreached : Bool = false
     @State private var funFactList = [String]()
     @State private var funFact : String = ""
+    @State private var breachedPassword : String = "password"
+    @State private var goodPassword : String = "$G33kfest!2023!"
 
     
     var body: some View {
@@ -34,11 +36,12 @@ struct HomeView: View {
                     .padding()
                     .keyboardType(.default)
                     .autocorrectionDisabled(true)
-                    .textInputAutocapitalization(.words)
+                    .textInputAutocapitalization(.never)
                 
                 Button(action: {
                     // Calling helper to check if field is empty
                     self.areInputsEmpty()
+                    self.isPasswordBreached()
 
                 }) {
                     Text("Check breach")
@@ -53,7 +56,7 @@ struct HomeView: View {
                 .alert(isPresented: self.$showAlert){
                     
                     Alert(
-                        title: Text("Error"),
+                        title: Text("Notice"),
                         message: Text("\(self.errorMessage)"),
                         dismissButton: .default(Text("Dismiss"))
                     )
@@ -91,12 +94,12 @@ struct HomeView: View {
     
     
     private func isPasswordBreached() {
-        if(self.isBreached){
+        if(self.tfPassword == self.breachedPassword){
             self.errorMessage = "Bad News...Unfortunately, this password has been part of a data breach."
-        } else if (!self.isBreached) {
+        } else if (self.tfPassword == self.goodPassword) {
             self.errorMessage = "Great news! Your password is not compromised. No breach found. "
         }
-        
+        self.showAlert = true
     }
     
     private func readFile(){

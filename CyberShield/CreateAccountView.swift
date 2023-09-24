@@ -20,86 +20,86 @@ struct CreateAccountView: View {
     @State private var showPasswordAlert: Bool = false
     @State private var errorMessage : String = ""
     
-    
     var body: some View {
         
         VStack{
-            
-            
-            Form{
-                Text("Sign up")
-                    .font(.largeTitle)
-                    .foregroundColor(.blue)
-                    .bold()
-                    .frame(maxWidth: .infinity)
                 
-                TextField("Enter Name", text: self.$tfName)
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
-                    .keyboardType(.default)
-                    .autocorrectionDisabled(true)
-                    .textInputAutocapitalization(.words)
-        
-                
-                TextField("Enter Email Address", text: self.$tfEmail)
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
-                    .keyboardType(.default)
-                    .autocorrectionDisabled(true)
-                
-                // User text isn't visible
-                SecureField(text: self.$tfPassword, prompt: Text("Enter Password")) {
-                        Text("Password")
-                   }
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
-                    .keyboardType(.default)
-                    .autocorrectionDisabled(true)
-                
-                
-                SecureField(text: self.$tfConpassword, prompt: Text("Confirm Password")) {
-                        Text("Password")
-                   }
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
-                    .keyboardType(.default)
-                    .autocorrectionDisabled(true)
-                
-                Spacer()
-
-                Button(action: {
-                    self.areInputsEmpty()
-                    self.passwordsMatching()
-                    // some operation
-                }) {
-                    Text("Create Account")
+                Form{
+                    Text("Sign up")
+                        .font(.largeTitle)
+                        .foregroundColor(.blue)
+                        .bold()
                         .frame(maxWidth: .infinity)
+                    
+                    TextField("Enter Name", text: self.$tfName)
+                        .textFieldStyle(.roundedBorder)
+                        .padding()
+                        .keyboardType(.default)
+                        .autocorrectionDisabled(true)
+                        .textInputAutocapitalization(.words)
+                    
+                    
+                    TextField("Enter Email Address", text: self.$tfEmail)
+                        .textFieldStyle(.roundedBorder)
+                        .padding()
+                        .keyboardType(.default)
+                        .autocorrectionDisabled(true)
+                    
+                    // User text isn't visible
+                    SecureField(text: self.$tfPassword, prompt: Text("Enter Password")) {
+                        Text("Password")
+                    }
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
+                    .keyboardType(.default)
+                    .autocorrectionDisabled(true)
+                    
+                    
+                    SecureField(text: self.$tfConpassword, prompt: Text("Confirm Password")) {
+                        Text("Password")
+                    }
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
+                    .keyboardType(.default)
+                    .autocorrectionDisabled(true)
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        self.areInputsEmpty()
+                        self.passwordsMatching()
+                    
+                        // some operation
+                    }) {
+                        Text("Create Account")
+                            .frame(maxWidth: .infinity)
                         // by applying the frame directly to text
                         // we are able to expand the button
-                }
-                // this will create a new frame around the button
-                // which is why the button doesnt expand -> expands frame
-                // .frame(maxWidth: .infinity)
-                
-                .buttonStyle(.borderedProminent)
-                .foregroundColor(.white)
-                .tint(.blue)
-                .padding()
-                .alert(isPresented: self.$showAlert){
+                    }
+                    // this will create a new frame around the button
+                    // which is why the button doesnt expand -> expands frame
+                    // .frame(maxWidth: .infinity)
                     
-                    Alert(
-                        title: Text("Error"),
-                        message: Text("\(self.errorMessage)"),
-                        dismissButton: .default(Text("Dismiss"))
-                    )
-                } // alert
+                    .buttonStyle(.borderedProminent)
+                    .foregroundColor(.white)
+                    .tint(.blue)
+                    .padding()
+                    .alert(isPresented: self.$showAlert){
+                        
+                        Alert(
+                            title: Text("Error"),
+                            message: Text("\(self.errorMessage)"),
+                            dismissButton: .default(Text("Dismiss"))
+                        )
+                    } // alert
+                    
+                    Spacer()
+                } // Form
                 
                 Spacer()
-            } // Form
-            
-            Spacer()
-            
-        } // VStack
+                
+            } // VStack
+    
     } // body
     
     // Helper function
@@ -119,11 +119,7 @@ struct CreateAccountView: View {
             self.errorMessage = "Passwords are not the same. Please try again"
         }
     }
-    
-    
-    
-    
-    
+   
 } // struct
 
 

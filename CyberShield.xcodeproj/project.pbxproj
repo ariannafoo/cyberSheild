@@ -8,23 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2F162E062ABF4171005B2842 /* CyberShieldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F162E052ABF4171005B2842 /* CyberShieldApp.swift */; };
-		2F162E082ABF4171005B2842 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F162E072ABF4171005B2842 /* ContentView.swift */; };
 		2F162E0A2ABF4172005B2842 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F162E092ABF4172005B2842 /* Assets.xcassets */; };
 		2F162E0D2ABF4172005B2842 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F162E0C2ABF4172005B2842 /* Preview Assets.xcassets */; };
 		2F162E142ABF4585005B2842 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F162E132ABF4585005B2842 /* HomeView.swift */; };
 		2F162E162ABF6E33005B2842 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F162E152ABF6E33005B2842 /* CreateAccountView.swift */; };
-		2F162E182ABFF226005B2842 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F162E172ABFF226005B2842 /* FileReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F162E022ABF4171005B2842 /* CyberShield.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CyberShield.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F162E052ABF4171005B2842 /* CyberShieldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyberShieldApp.swift; sourceTree = "<group>"; };
-		2F162E072ABF4171005B2842 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2F162E092ABF4172005B2842 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F162E0C2ABF4172005B2842 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2F162E132ABF4585005B2842 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2F162E152ABF6E33005B2842 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
-		2F162E172ABFF226005B2842 /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +55,9 @@
 			children = (
 				2F162E152ABF6E33005B2842 /* CreateAccountView.swift */,
 				2F162E052ABF4171005B2842 /* CyberShieldApp.swift */,
-				2F162E072ABF4171005B2842 /* ContentView.swift */,
 				2F162E092ABF4172005B2842 /* Assets.xcassets */,
 				2F162E0B2ABF4172005B2842 /* Preview Content */,
 				2F162E132ABF4585005B2842 /* HomeView.swift */,
-				2F162E172ABFF226005B2842 /* FileReader.swift */,
 			);
 			path = CyberShield;
 			sourceTree = "<group>";
@@ -147,8 +141,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F162E142ABF4585005B2842 /* HomeView.swift in Sources */,
-				2F162E182ABFF226005B2842 /* FileReader.swift in Sources */,
-				2F162E082ABF4171005B2842 /* ContentView.swift in Sources */,
 				2F162E162ABF6E33005B2842 /* CreateAccountView.swift in Sources */,
 				2F162E062ABF4171005B2842 /* CyberShieldApp.swift in Sources */,
 			);
