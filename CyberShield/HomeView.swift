@@ -2,7 +2,7 @@
 //  HomeView.swift
 //  CyberShield
 //
-//  Created by Arianna Foo on 2023-09-23.
+//  Created by Arianna Foo + Haniya Akhtar on 2023-09-23.
 //
 
 import SwiftUI
